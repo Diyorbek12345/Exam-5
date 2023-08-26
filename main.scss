@@ -1,0 +1,55 @@
+.card{
+  background-color: transparent;
+}
+
+.btns {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.tel {
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.tel__name{
+  color: black;
+}
+
+.form-select{
+  max-width: 100px;
+}
+
+.grad {
+  
+  position: absolute;
+  z-index: -777;
+  top: 0; bottom: 0;
+  left: 0; right: 0;
+  background: linear-gradient(#dead45, #e38ab8);
+  background-size: 1000;
+  height: 350%; 
+
+  &:after {
+    display: block;
+    position: absolute;
+    top: 0; bottom: 0;
+    left: 0; right: 0;
+    content: "";
+    background: linear-gradient(#54c9c2, #b0dea6);
+    animation: fade 10s ease-in-out infinite alternate;
+  }
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;  
+  }
+}
