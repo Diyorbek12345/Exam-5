@@ -44,7 +44,7 @@
             </select>
 
             <select
-              class="form-select maried__Select form-select-sm"
+              class="form-select name__Select form-select-sm"
               aria-label="Small select example"
             >
               <option selected>IsMarried</option>
@@ -57,7 +57,7 @@
               class="btn btn-outline-secondary add-category-btn"
               type="button"
             >
-              Add Teacher
+              Add Students
             </button>
           </div>
           <div class="alert alert-warning">
@@ -72,7 +72,7 @@
                 <div class="modal-content">
                   <div class="modal-header">
                     <h1 class="modal-title fs-5" id="exampleModalLabel">
-                      Teachers form
+                      Students form
                     </h1>
                     <button
                       type="button"
@@ -83,7 +83,7 @@
                   </div>
                   <div class="modal-body">
                     <div class="mb-3">
-                      <label for="name" class="form-label">Teacher name</label>
+                      <label for="name" class="form-label">Students name</label>
                       <input
                         type="text"
                         class="form-control inputFirstName"
@@ -95,7 +95,7 @@
                     </div>
                     <div class="mb-3">
                       <label for="name" class="form-label"
-                        >Teacher lastname</label
+                        >Students lastname</label
                       >
                       <input
                         type="text"
@@ -108,7 +108,7 @@
                     </div>
                     <div class="mb-3">
                       <label for="name" class="form-label"
-                        >Teacher phoneNumber</label
+                        >Students phoneNumber</label
                       >
                       <input
                         type="tel"
@@ -121,7 +121,7 @@
                       <div class="invalid-feedback">Please fill!</div>
                     </div>
                     <div class="mb-3">
-                      <label for="name" class="form-label">Teacher email</label>
+                      <label for="name" class="form-label">Students email</label>
                       <input
                         type="email"
                         class="form-control email"
@@ -133,12 +133,25 @@
                     </div>
 
                     <div class="mb-3">
-                      <label for="name" class="form-label"
-                        >Teacher groups</label
-                      >
+                      <label for="name" class="form-label">Students field</label>
                       <input
                         type="text"
-                        class="form-control group"
+                        class="form-control field"
+                        id="name"
+                        required
+                      />
+                      <div class="valid-feedback">Looks good!</div>
+                      <div class="invalid-feedback">Please fill!</div>
+                    </div>
+
+
+                    <div class="mb-3">
+                      <label for="name" class="form-label"
+                        >Students birthday</label
+                      >
+                      <input
+                        type="date"
+                        class="form-control birthday"
                         id="name"
                         required
                       />
@@ -148,7 +161,7 @@
 
                     <div class="mb-3">
                       <label for="avatar" class="form-label"
-                        >Teacher image</label
+                        >Student image</label
                       >
                       <input
                         type="text"
@@ -166,8 +179,8 @@
                         type="checkbox"
                         id="isMarried"
                       />
-                      <label class="form-check-label" for="isMarried"
-                        >Is Married ?</label
+                      <label class="form-check-label" for="Is Work"
+                        >Is Work ?</label
                       >
                       <div class="valid-feedback">Looks good!</div>
                       <div class="invalid-feedback">
@@ -182,12 +195,12 @@
                       data-bs-dismiss="modal"
                     >
                       Close
-                    </button>
+                   </button>
                     <button
                       type="submit"
                       class="btn btn-primary add-save-category-btn"
                     >
-                      Add category
+                      Add Students
                     </button>
                   </div>
                 </div>
@@ -201,6 +214,6 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="js/const.js"></script>
     <script src="js/main.js"></script>
-    <script src="js/category.js"></script>
+    <script src="js/students.js"></script>
   </body>
 </html>

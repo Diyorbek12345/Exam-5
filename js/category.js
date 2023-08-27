@@ -18,13 +18,14 @@ const avatarimg = document.querySelector(".avatar_img");
 const categoryModal = document.querySelector("#category-modal");
 const addCategoryBtn = document.querySelector(".add-category-btn");
 const addSaveCategoryBtn = document.querySelector(".add-save-category-btn");
-const selectBtn = document.querySelector(".name__Select")
+const selectBtn = document.querySelector(".form-select");
+const marriedfiltercheckbox = document.querySelector("maried__Select")
 let search = "";
 let activePage = 1;
 let selected = null;
 
 function getCategoryCard(teachers) {
-  return  `
+  return `
       <div class=" card col-12 col-sm-6 col-md-4 col-lg-3 mb-3 ">
       <div class="card">
         <img src="${teachers.avatar}" class="card-img-top" alt="..." />
@@ -36,7 +37,6 @@ function getCategoryCard(teachers) {
           <p>${teachers.groups}</p>
           <p>${teachers.isMarried ? "Married" : "notmarried"}</p>
           <a class="tel" href="tel:${
-
             teachers.phoneNumber
           }"><span class="tel__name">Number:</span> ${teachers.phoneNumber}</a>
          <div class="btns">
@@ -50,14 +50,28 @@ function getCategoryCard(teachers) {
           <button class="btn btn-danger delete-btn" id="${
             teachers.id
           }">Delete</button>
-          <a href="products.html?category=${teachers.id}" class="btn btn-success"
-            >See products</a>
+          <a href="Students.html?Students=${
+            teachers.id
+          }" class="btn btn-success"
+            >Students</a>
          </div>
         </div>
       </div>
     </div
-  `
+  `;
 }
+
+selectBtn.addEventListener("change", function () {
+  search = categorySearchInput.value;
+
+  getCategories();
+});
+
+
+marriedfiltercheckbox.addEventListener("change", function () {
+  search = marriedfiltercheckbox.value;
+  getCategories()
+});
 
 
 async function getCategories() {
@@ -72,13 +86,46 @@ async function getCategories() {
 
     // all categories with search
     let { data } = await request.get("Teachers", { params });
+
     console.log(data);
+
     // categories with pagination
     let { data: dataWithPagination } = await request.get("Teachers", {
       params: paramsWithPagination,
     });
+
+    if (selectBtn.value !== "all") {
+      const sortOrder = selectBtn.value === "asc" ? 1 : -1;
+
+      dataWithPagination.sort((a, b) => {
+        const nameA = a.lastName;
+        const nameB = b.lastName;
+
+        if (nameA < nameB) return -1 * sortOrder;
+        if (nameA > nameB) return 1 * sortOrder;
+        return 0;
+      });
+      
+    }
+
+    if (marriedfiltercheckbox.value !== "all") {
+      dataWithPagination = data.filter((filters) => {
+        if (marriedfiltercheckbox.value !== "true") {
+          return filters.isMaried === true;
+        } else {
+          return filters.isMaried === false;
+        }
+      });
+    }
+    console.log(dataWithPagination);
+
+
+
+    
     pagination;
     let pages = Math.ceil(data.length / LIMIT);
+
+    
 
     pagination.innerHTML = `<li class="page-item ${
       activePage === 1 ? "disabled" : ""
@@ -101,24 +148,17 @@ async function getCategories() {
     </li>`;
 
     if (selectBtn.value !== "all") {
-  const isAscending = selectBtn.value === "asc";
+      const sortOrder = selectBtn.value === "asc" ? 1 : -1;
 
-  dataWithPagination.sort((a, b) => {
-    const nameA = a.lastname;
-    const nameB = b.lastname;
+      dataWithPagination.sort((a, b) => {
+        const nameA = a.lastName;
+        const nameB = b.lastName;
 
-    let comparison = 0;
-
-    if (nameA < nameB) {
-      comparison = isAscending ? -1 : 1;
-    } else if (nameA > nameB) {
-      comparison = isAscending ? 1 : -1;
+        if (nameA < nameB) return -1 * sortOrder;
+        if (nameA > nameB) return 1 * sortOrder;
+        return 0;
+      });
     }
-   
-    console.log(comparison);
-    return comparison;
-  });
-}
 
     categoriesCount.textContent = data.length;
     categoriesRow.innerHTML = "";
@@ -128,7 +168,6 @@ async function getCategories() {
     dataWithPagination.map((category) => {
       categoriesRow.innerHTML += getCategoryCard(category);
       console.log(category);
-      
     });
   } catch (err) {
     console.log(err);
@@ -141,8 +180,6 @@ categorySearchInput.addEventListener("keyup", function () {
   search = this.value;
   getCategories();
 });
-
-
 
 pagination.addEventListener("click", (e) => {
   let page = e.target.getAttribute("page");
@@ -177,8 +214,6 @@ categoryForm.addEventListener("submit", async function (e) {
   getCategories();
   bootstrap.Modal.getInstance(categoryModal).hide();
 });
-
-
 
 addCategoryBtn.addEventListener("click", () => {
   selected = null;
