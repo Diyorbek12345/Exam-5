@@ -53,20 +53,111 @@
           animation: fade 10s ease-in-out infinite alternate;
 }
 
-@-webkit-keyframes fade {
+#loading {
+  position: fixed;
+  background-color: white;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  z-index: 100;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+#loading.loading-none {
+  opacity: 0;
+  z-index: -1;
+}
+
+@-webkit-keyframes ldio-xzmvm3064f {
   0% {
-    opacity: 0;
+    -webkit-transform: scale(1.15);
+            transform: scale(1.15);
   }
   100% {
-    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
 }
 
-@keyframes fade {
+@keyframes ldio-xzmvm3064f {
   0% {
-    opacity: 0;
+    -webkit-transform: scale(1.15);
+            transform: scale(1.15);
   }
   100% {
-    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
+}
+.ldio-xzmvm3064f div {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  top: 13.3333333333px;
+  left: 13.3333333333px;
+  background: #e15b64;
+  -webkit-animation: ldio-xzmvm3064f 1s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+          animation: ldio-xzmvm3064f 1s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+  -webkit-animation-delay: -0.3s;
+          animation-delay: -0.3s;
+}
+
+.ldio-xzmvm3064f div:nth-child(2) {
+  top: 13.3333333333px;
+  left: 106.6666666667px;
+  background: #f47e60;
+  -webkit-animation-delay: -0.2s;
+          animation-delay: -0.2s;
+}
+
+.ldio-xzmvm3064f div:nth-child(3) {
+  top: 106.6666666667px;
+  left: 13.3333333333px;
+  background: #abbd81;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+
+.ldio-xzmvm3064f div:nth-child(4) {
+  top: 106.6666666667px;
+  left: 106.6666666667px;
+  background: #f8b26a;
+  -webkit-animation-delay: -0.1s;
+          animation-delay: -0.1s;
+}
+
+.loadingio-spinner-cube-kf3988i8swc {
+  width: 200px;
+  height: 200px;
+  display: inline-block;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.ldio-xzmvm3064f {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  -webkit-transform: translateZ(0) scale(1);
+          transform: translateZ(0) scale(1);
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-transform-origin: 0 0;
+          transform-origin: 0 0; /* see note above */
+}
+
+.ldio-xzmvm3064f div {
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
 }/*# sourceMappingURL=main.css.map */

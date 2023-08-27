@@ -22,7 +22,19 @@
     <script defer type="module" src="js/main.js"></script>
     <script defer type="module" src="js/category.js"></script> -->
   </head>
+
   <body>
+    <div id="loading">
+      <div class="loadingio-spinner-cube-kf3988i8swc">
+        <div class="ldio-xzmvm3064f">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+    </div>
+
     <canvas id="canvas"></canvas>
     <header></header>
     <main>
@@ -61,7 +73,7 @@
             </button>
           </div>
           <div class="alert alert-warning">
-            All Teachers: <span class="categories-count"></span>
+            All Students: <span class="categories-count"></span>
           </div>
           <div class="categories-row row"></div>
           <ul class="pagination"></ul>
@@ -121,7 +133,9 @@
                       <div class="invalid-feedback">Please fill!</div>
                     </div>
                     <div class="mb-3">
-                      <label for="name" class="form-label">Students email</label>
+                      <label for="name" class="form-label"
+                        >Students email</label
+                      >
                       <input
                         type="email"
                         class="form-control email"
@@ -133,7 +147,9 @@
                     </div>
 
                     <div class="mb-3">
-                      <label for="name" class="form-label">Students field</label>
+                      <label for="name" class="form-label"
+                        >Students field</label
+                      >
                       <input
                         type="text"
                         class="form-control field"
@@ -143,7 +159,6 @@
                       <div class="valid-feedback">Looks good!</div>
                       <div class="invalid-feedback">Please fill!</div>
                     </div>
-
 
                     <div class="mb-3">
                       <label for="name" class="form-label"
@@ -195,7 +210,7 @@
                       data-bs-dismiss="modal"
                     >
                       Close
-                   </button>
+                    </button>
                     <button
                       type="submit"
                       class="btn btn-primary add-save-category-btn"
@@ -212,6 +227,7 @@
       <div class="grad"></div>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="js/login.js"></script>
     <script src="js/const.js"></script>
     <script src="js/main.js"></script>
     <script src="js/students.js"></script>

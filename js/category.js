@@ -30,7 +30,7 @@ function getCategoryCard(teachers) {
       <div class="card">
         <img src="${teachers.avatar}" class="card-img-top" alt="..." />
         <div class="card-body">
-        <p>${teachers.id}</p>
+ 
           <h3 class="card-title">${teachers.FirstName}</h3>
           <h5 class="card-title">${teachers.LastName}</h5>
           <p>${teachers.email}</p>
@@ -61,6 +61,10 @@ function getCategoryCard(teachers) {
   `;
 }
 
+
+
+
+
 selectBtn.addEventListener("change", function () {
   search = categorySearchInput.value;
 
@@ -68,10 +72,10 @@ selectBtn.addEventListener("change", function () {
 });
 
 
-marriedfiltercheckbox.addEventListener("change", function () {
-  search = marriedfiltercheckbox.value;
-  getCategories()
-});
+// marriedfiltercheckbox.addEventListener("change", function () {
+//   search = marriedfiltercheckbox.value;
+//   getCategories()
+// });
 
 
 async function getCategories() {
@@ -108,16 +112,16 @@ async function getCategories() {
       
     }
 
-    if (marriedfiltercheckbox.value !== "all") {
-      dataWithPagination = data.filter((filters) => {
-        if (marriedfiltercheckbox.value !== "true") {
-          return filters.isMaried === true;
-        } else {
-          return filters.isMaried === false;
-        }
-      });
-    }
-    console.log(dataWithPagination);
+    // if (marriedfiltercheckbox.value !== "all") {
+    //   dataWithPagination = data.filter((filters) => {
+    //     if (marriedfiltercheckbox.value !== "true") {
+    //       return filters.isMaried === true;
+    //     } else {
+    //       return filters.isMaried === false;
+    //     }
+    //   });
+    // }
+    // console.log(dataWithPagination);
 
 
 

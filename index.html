@@ -22,9 +22,22 @@
     <script defer type="module" src="js/main.js"></script>
     <script defer type="module" src="js/category.js"></script> -->
   </head>
+  
   <body>
+
+    <div id="loading">
+      <div class="loadingio-spinner-cube-kf3988i8swc">
+        <div class="ldio-xzmvm3064f">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+    </div>
     <canvas id="canvas"></canvas>
-    <header></header>
+    <header>
+    </header>
     <main>
       <section>
         <div class="container">
@@ -48,9 +61,10 @@
               aria-label="Small select example"
             >
               <option selected>IsMarried</option>
-              <option value="asc">Married</option>
-              <option value="dsc">NotMarried</option>
+              <option value="true">Married</option>
+              <option value="false">NotMarried</option>
             </select>
+          
             <button
               data-bs-toggle="modal"
               data-bs-target="#category-modal"
@@ -198,6 +212,7 @@
       </section>
       <div class="grad"></div>
     </main>
+    <script src="js/login.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="js/const.js"></script>
     <script src="js/main.js"></script>
